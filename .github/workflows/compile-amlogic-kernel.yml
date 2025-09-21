@@ -184,10 +184,10 @@ jobs:
           tag: kernel_amlogic
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
+          removeArtifacts: false
+          replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            - The kernel can be used to compile Armbian and OpenWrt.
-            - The kernel source code comes from: codesnas/linux-6.12.y
-            - The kernel compilation toolchain: gcc
-            - This is a dedicated kernel for `amlogic OES-PLUS` and is not compatible with other series.
-            - 这是 `Amlogic OES-PLUS` 专用内核，和其他系列不通用
+            The kernel can be used to compile Armbian and OpenWrt.
+            The kernel source code comes from: ${{ inputs.kernel_source }}
+            The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
