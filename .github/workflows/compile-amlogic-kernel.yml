@@ -189,5 +189,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             - The kernel can be used to compile Armbian and OpenWrt.
-            - The kernel source code comes from: unifreq/linux-6.12.y-s922x
+            - The kernel source code comes from: codesnas/linux-6.12.y
             - The kernel compilation toolchain: gcc
+            - This is a dedicated kernel for `amlogic OES-PLUS` and is not compatible with other series.
+            - 这是 `Amlogic OES-PLUS` 专用内核，和其他系列不通用
