@@ -88,14 +88,7 @@ on:
           - -ophub
           - -arthur97172         
           - -yourname
-      kernel_config:
-        description: "Set the path of kernel .config"
-        required: false
-        default: "kernel-config/release/amlogic"
-        type: choice
-        options:
-          - kernel-config/release/amlogic
-          - false
+
 env:
   TZ: Etc/UTC
 
