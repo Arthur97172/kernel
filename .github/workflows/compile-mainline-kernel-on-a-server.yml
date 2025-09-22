@@ -72,7 +72,7 @@ on:
       compress_format:
         description: "Set the initrd compression format"
         required: false
-        default: "xz"
+        default: "gzip"
         type: choice
         options:
           - xz
