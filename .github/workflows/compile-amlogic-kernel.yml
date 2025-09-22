@@ -27,8 +27,6 @@ on:
           - 6.1.y
           - 6.6.y
           - 6.12.y
-          - 6.1.y_6.6.y_6.12.y
-          - all
       kernel_auto:
         description: "Auto use the latest kernel"
         required: false
@@ -143,6 +141,7 @@ jobs:
           sudo mount /dev/github/runner /builder
           sudo chown -R runner.runner /builder
           df -hT
+          echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Create a mapped directory
         id: mapped
@@ -179,6 +178,7 @@ jobs:
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            The kernel can be used to compile Armbian and OpenWrt.
-            The kernel source code comes from: ${{ inputs.kernel_source }}
-            The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
+            - The kernel can be used to compile Armbian and OpenWrt.
+            - The kernel source code comes from: ${{ inputs.kernel_source }}
+            - The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
+            - This is a dedicated kernel for `Ramlogic OES-PLUS ONLY` and is not compatible with other series.
