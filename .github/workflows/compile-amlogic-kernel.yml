@@ -13,27 +13,20 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "unifreq"
+        default: "unifreq/linux-6.12.y"
         type: choice
         options:
-          - unifreq
-          - codesnas
+          - unifreq/linux-6.12.y
+          - codesnas/linux-6.12.y
       kernel_version:
         description: "Select kernel version"
         required: false
         default: "6.12.y"
         type: choice
         options:
-          - 5.4.y
-          - 5.10.y
-          - 5.15.y
           - 6.1.y
           - 6.6.y
           - 6.12.y
-          - 5.4.y_5.10.y
-          - 5.15.y_6.1.y
-          - 6.6.y_6.12.y
-          - 5.4.y_5.10.y_5.15.y
           - 6.1.y_6.6.y_6.12.y
           - all
       kernel_auto:
